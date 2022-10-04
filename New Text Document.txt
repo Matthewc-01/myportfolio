@@ -1,0 +1,14 @@
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !/index\.php$
+    RewriteCond %{REQUEST_FILENAME} !/xml|css|jpe?g|png|gif|js|pdf
+    RewriteRule ^.*$ - [F]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    Order allow,deny
+    Deny from All
+</IfModule>
